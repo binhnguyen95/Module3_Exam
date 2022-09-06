@@ -82,12 +82,26 @@ public class StudentServlet extends HttpServlet {
         }
         switch (action) {
             case "create":
-//                    createStudent(request, response);
+                createStudent(request, response);
                 break;
             case "edit":
                 editStudent(request, response);
                 break;
         }
+    }
+
+    private void createStudent(HttpServletRequest request, HttpServletResponse response) {
+        String name = request.getParameter("name");
+        String birthDate = request.getParameter("birthDate");
+        String address = request.getParameter("address");
+        String phone = request.getParameter("phone");
+        String email = request.getParameter("email");
+        String classRoom = request.getParameter("classRoom");
+        Student students = new Student(name, birthDate, address,phone,email,classRoom);
+        userDAO.insertUser(users);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("user/create.jsp");
+        request.setAttribute("alo", "New user was created!");
+        dispatcher.forward(request, response);
     }
 
     private void editStudent(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

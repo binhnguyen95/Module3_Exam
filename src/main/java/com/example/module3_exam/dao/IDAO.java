@@ -8,7 +8,7 @@ public interface IDAO<T> {
     List<T> selectAll();
     List<T> selectByName(String name);
     boolean delete(int id);
-    void save(T t);
+    void create(T t);
     boolean update(Student students);
     public Student findByID(int id);
 }

@@ -63,8 +63,23 @@ public class StudentDAO implements IDAO {
     }
 
     @Override
-    public void save(Object o) {
-
+    public void create(Student students) {
+        try (
+                PreparedStatement statement = connection.prepareStatement(INSERT_STUDENT)
+        )
+        {
+            statement.setString(1, students.getName());
+            statement.setString(2, String.valueOf(students.getBirthDate()));
+            statement.setString(3, students.getAddress());
+            statement.setString(4, students.getPhone());
+            statement.setString(5, students.getEmail());
+            statement.setString(6, students.getClassRoom());
+            System.out.println(statement);
+            statement.executeUpdate();
+            System.out.println("INSERT THANH CONG");
+        } catch (SQLException e) {
+            System.err.println(e);
+        }
     }
 
     @Override
