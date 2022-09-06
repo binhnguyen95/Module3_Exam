@@ -3,12 +3,23 @@ package com.example.module3_exam.model;
 import java.time.LocalDate;
 
 public class Student {
+    private int id;
     private String name;
     private LocalDate birthDate;
     private String address;
     private String phone;
     private String email;
     private String classRoom;
+
+    public Student(int id, String name, LocalDate birthDate, String address, String phone, String email, String classRoom) {
+        this.id = id;
+        this.name = name;
+        this.birthDate = birthDate;
+        this.address = address;
+        this.phone = phone;
+        this.email = email;
+        this.classRoom = classRoom;
+    }
 
     public Student(String name, LocalDate birthDate, String address, String phone, String email, String classRoom) {
         this.name = name;
@@ -17,6 +28,14 @@ public class Student {
         this.phone = phone;
         this.email = email;
         this.classRoom = classRoom;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {

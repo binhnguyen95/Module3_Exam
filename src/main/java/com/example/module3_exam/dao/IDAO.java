@@ -1,12 +1,14 @@
 package com.example.module3_exam.dao;
 
+import com.example.module3_exam.model.Student;
+
 import java.util.List;
 
 public interface IDAO<T> {
     List<T> selectAll();
     List<T> selectByName(String name);
-    void delete(int id);
+    boolean delete(int id);
     void save(T t);
-    void update(int id,T t);
-    public T findByID(int id);
+    boolean update(Student students);
+    public Student findByID(int id);
 }

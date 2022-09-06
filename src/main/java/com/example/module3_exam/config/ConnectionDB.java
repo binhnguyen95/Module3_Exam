@@ -5,13 +5,17 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConnectionDB {
-    public static final String URL = "jdbc:mysql://localhost:3306/Case_Study";
+    private Connection connection;
+
+    public static ConnectionDB instance = null;
+    public static final String URL = "jdbc:mysql://localhost:3306/module3_exam";
     public static final String USER = "root";
 
     public static final String PASSWORD = "chetdicon";
 
     public ConnectionDB() {
     }
+
 
 
     public static Connection getConnect() {
