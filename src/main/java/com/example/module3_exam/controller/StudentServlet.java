@@ -90,15 +90,15 @@ public class StudentServlet extends HttpServlet {
         }
     }
 
-    private void createStudent(HttpServletRequest request, HttpServletResponse response) {
+    private void createStudent(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name = request.getParameter("name");
-        String birthDate = request.getParameter("birthDate");
+        LocalDate birthDate = LocalDate.parse(request.getParameter("birthDate"));
         String address = request.getParameter("address");
         String phone = request.getParameter("phone");
         String email = request.getParameter("email");
         String classRoom = request.getParameter("classRoom");
         Student students = new Student(name, birthDate, address,phone,email,classRoom);
-        userDAO.insertUser(users);
+        studentDAO.create(students);
         RequestDispatcher dispatcher = request.getRequestDispatcher("user/create.jsp");
         request.setAttribute("alo", "New user was created!");
         dispatcher.forward(request, response);
