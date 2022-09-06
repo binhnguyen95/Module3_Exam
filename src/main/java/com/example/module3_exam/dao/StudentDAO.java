@@ -8,7 +8,11 @@ import java.util.List;
 public class StudentDAO implements IDAO {
     Connection connection = ConnectionDB.getConnect();
 
-
+    private static final String INSERT_STUDENT = "insert into student(name, birthDate, address, phone, email, classroom) values (?, ?, ?, ?, ?, ?)";
+    private static final String SELECT_ALL_STUDENT = "select * from student";
+    private static final String SELECT_STUDENT_BY_ID = "select id,name,birthDate,address,phone,email,classroom from student where id=?";
+    private static final String DELETE_STUDENT = "delete from student where id = ?";
+    private static final String UPDATE_STUDENT = "update student set name=?,birthDate=?, address=?, phone=?, email=?, classroom=? where id=?;";
 
     @Override
     public List selectAll() {
