@@ -20,47 +20,47 @@
                     Edit Student
                 </h2>
             </caption>
-            <c:if test="${student != null}">
-                <input type="hidden" name="id" value="${student.id}"/>
+            <c:if test="${students != null}">
+                <input type="hidden" name="id" value="${students.id}"/>
             </c:if>
             <tr>
                 <th>Student Name:</th>
                 <td>
-                    <input type="text" name="name" size="45" value="${student.name}"/>
+                    <input type="text" name="name" size="45" value="${students.name}"/>
                 </td>
             </tr>
             <tr>
                 <th>Student birthDate:</th>
                 <td>
-                    <input type="text" name="email" size="45" value="${user.email}"
+                    <input type="text" name="birthDate" size="45" value="${students.birthDate}"
                     />
                 </td>
             </tr>
             <tr>
                 <th>Student address:</th>
                 <td>
-                    <input type="text" name="country" size="15" value="${user.country}"
+                    <input type="text" name="address" size="15" value="${students.address}"
                     />
                 </td>
             </tr>
             <tr>
                 <th>Student phone:</th>
                 <td>
-                    <input type="text" name="country" size="15" value="${user.country}"
+                    <input type="text" name="phone" size="15" value="${students.phone}"
                     />
                 </td>
             </tr>
             <tr>
                 <th>Student email:</th>
                 <td>
-                    <input type="text" name="country" size="15" value="${user.country}"
+                    <input type="text" name="email" size="15" value="${students.email}"
                     />
                 </td>
             </tr>
             <tr>
                 <th>Student classRoom:</th>
                 <td>
-                    <input type="text" name="country" size="15" value="${user.country}"
+                    <input type="text" name="classRoom" size="15" value="${students.classRoom}"
                     />
                 </td>
             </tr>
